@@ -7,7 +7,6 @@ const ImageGalleryItem = ({
   tags = "",
   onSetImgInfo
 }) => {
-  console.log("~ src", src);
     return (
       <Item>
         <Image

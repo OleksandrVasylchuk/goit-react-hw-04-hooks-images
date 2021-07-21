@@ -31,12 +31,11 @@ export default function Modal({onClose, largeImageURL, alt}) {
       onClose();
     }
   };
-
   return createPortal(
     <Overlay onClick={handleOverlayClick}>
       <ModalImg>
         <Img src={largeImageURL} alt={alt} />
-      </ModalImg>
+              </ModalImg>
     </Overlay>,
     modalRoot,
   );
