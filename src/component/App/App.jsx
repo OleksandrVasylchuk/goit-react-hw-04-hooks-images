@@ -39,7 +39,7 @@ export default function App() {
       return;
     }
        
-    setStatus(status.PENDING)
+    setStatus(Status.PENDING)
     
     pixabayAPI
       .fetchImage(imageName, currentPage)
@@ -65,27 +65,23 @@ export default function App() {
           });
         }, 500);
       });
-  
-  },[imageName, status.PENDING, currentPage, error])
+  },[currentPage, imageName])
 
     
    const toggleModal = () => {
     setShowModal(!showModal);
   };
 
-  const setImgInfo = (e) => {
-    const { source } = e.target.dataset;
-    const { alt } = e.target;
-
-    setLargeImageURL(source);
+  const setImgInfo = ({src, alt}) => {
+    setLargeImageURL(src);
     setAlt(alt);
-
+   console.log(src)
     toggleModal();
   };
 
   const  onClickLoadMore = () => {
    setCurrentPage(prevState => 
-      prevState.currentPage + 1,
+      prevState + 1
     );
   };
 

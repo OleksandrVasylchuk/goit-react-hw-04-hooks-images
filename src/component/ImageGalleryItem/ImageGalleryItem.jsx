@@ -7,6 +7,7 @@ const ImageGalleryItem = ({
   tags = "",
   onSetImgInfo
 }) => {
+  console.log("~ src", src);
     return (
       <Item>
         <Image
@@ -15,12 +16,12 @@ const ImageGalleryItem = ({
           onClick={() => {
           onSetImgInfo({ largeImageURL, tags });
         }}/>
-
-     
+    
       </Item>
     );
 
 };
+
 
 ImageGalleryItem.propTypes = {
     src: PropTypes.string.isRequired,
